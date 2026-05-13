@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Términos y Condiciones — INFOZONAL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-mid: #112240;
+      --cyan: #00c6d4;
+      --cyan-soft: #00e5f0;
+      --white: #f0f4f8;
+      --gray: #8892a4;
+      --border: rgba(0,198,212,0.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--navy);
+      color: var(--white);
+      font-family: 'Sora', sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background: var(--navy-mid);
+      border-bottom: 1px solid var(--border);
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--cyan);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--white);
+    }
+
+    .logo-text span { color: var(--cyan); }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-mid) 0%, #0d1e3a 100%);
+      padding: 72px 40px 56px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0,198,212,0.07) 0%, transparent 70%);
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(0,198,212,0.12);
+      border: 1px solid rgba(0,198,212,0.3);
+      color: var(--cyan);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      color: var(--gray);
+      font-size: 14px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+    }
+
+    /* Intro box */
+    .intro-box {
+      background: rgba(0,198,212,0.06);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--cyan);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .intro-box strong { color: var(--white); }
+
+    /* Sections */
+    .section {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-number {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--cyan);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 24px;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .section p {
+      color: var(--gray);
+      margin-bottom: 14px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0;
+    }
+
+    .section ul li {
+      color: var(--gray);
+      padding: 8px 0 8px 24px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .section ul li:last-child { border-bottom: none; }
+
+    .section ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    strong { color: var(--white); font-weight: 600; }
+
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Info cards */
+    .info-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .info-card p { margin: 0; }
+
+    /* Footer */
+    footer {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--border);
+      padding: 32px 40px;
+      text-align: center;
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    footer a { color: var(--cyan); }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 16px 20px; }
+      .hero { padding: 48px 20px 40px; }
+      .container { padding: 40px 20px 60px; }
+      footer { padding: 24px 20px; }
+      .footer-links { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/" style="display:flex;align-items:center;gap:16px;text-decoration:none;">
+    <div class="logo-mark">IZ</div>
+    <span class="logo-text">INFO<span>ZONAL</span></span>
+    </a>
+  </header>
+
+  <div class="hero">
+    <div class="hero-tag">Documento legal</div>
+    <h1>Términos y Condiciones</h1>
+    <p>Última actualización: 13 de mayo de 2026 · Versión 1.0</p>
+  </div>
+
+  <div class="container">
+
+    <div class="intro-box">
+      Al descargar, instalar o utilizar la aplicación <strong>INFOZONAL</strong>, usted acepta quedar vinculado por los presentes Términos y Condiciones. Si no está de acuerdo con alguna de estas condiciones, le pedimos que no utilice la aplicación.
+    </div>
+
+    <!-- 1 -->
+    <div class="section">
+      <div class="section-number">Artículo 01</div>
+      <h2>Identificación del responsable</h2>
+      <p>La aplicación <strong>INFOZONAL</strong> es desarrollada y operada por:</p>
+      <div class="info-card">
+        <p><strong>Titular:</strong> Jaime Alberto Martínez Reyes<br>
+        <strong>Tipo:</strong> Persona natural<br>
+        <strong>Correo de contacto:</strong> <a href="mailto:privacidad@infozonal.com">privacidad@infozonal.com</a><br>
+        <strong>Sitio web:</strong> <a href="https://infozonal.com">www.infozonal.com</a></p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="section">
+      <div class="section-number">Artículo 02</div>
+      <h2>Descripción del servicio</h2>
+      <p>INFOZONAL es una aplicación móvil de directorio local y servicios comunitarios que conecta a habitantes y visitantes de una zona con negocios, servicios, profesionales, avisos comunitarios y promociones de su área.</p>
+      <p>La aplicación permite:</p>
+      <ul>
+        <li>Buscar y explorar negocios y servicios locales</li>
+        <li>Consultar y publicar avisos comunitarios</li>
+        <li>Acceder a promociones de comercios locales</li>
+        <li>Dejar reseñas y calificaciones sobre establecimientos</li>
+        <li>Recibir notificaciones sobre avisos y promociones relevantes</li>
+      </ul>
+    </div>
+
+    <!-- 3 -->
+    <div class="section">
+      <div class="section-number">Artículo 03</div>
+      <h2>Registro y cuenta de usuario</h2>
+      <p>Para acceder a ciertas funcionalidades de INFOZONAL es necesario crear una cuenta. Al registrarse, el usuario se compromete a:</p>
+      <ul>
+        <li>Proporcionar información veraz, exacta y actualizada</li>
+        <li>Mantener la confidencialidad de su contraseña</li>
+        <li>Notificar cualquier uso no autorizado de su cuenta</li>
+        <li>No compartir sus credenciales con terceros</li>
+        <li>Ser responsable de toda actividad realizada desde su cuenta</li>
+      </ul>
+      <p>El titular se reserva el derecho de suspender o eliminar cuentas que incumplan estos términos.</p>
+    </div>
+
+    <!-- 4 -->
+    <div class="section">
+      <div class="section-number">Artículo 04</div>
+      <h2>Uso aceptable</h2>
+      <p>El usuario se compromete a utilizar INFOZONAL de forma lícita y respetuosa. Queda expresamente prohibido:</p>
+      <ul>
+        <li>Publicar contenido falso, engañoso, difamatorio u ofensivo</li>
+        <li>Suplantar la identidad de otras personas o negocios</li>
+        <li>Utilizar la aplicación para fines comerciales no autorizados o spam</li>
+        <li>Intentar acceder a sistemas, datos o cuentas sin autorización</li>
+        <li>Publicar contenido que infrinja derechos de propiedad intelectual</li>
+        <li>Realizar acciones que perjudiquen el funcionamiento de la aplicación</li>
+        <li>Publicar contenido que incite al odio, la violencia o la discriminación</li>
+      </ul>
+    </div>
+
+    <!-- 5 -->
+    <div class="section">
+      <div class="section-number">Artículo 05</div>
+      <h2>Contenido generado por usuarios</h2>
+      <p>Los usuarios pueden publicar reseñas, comentarios y avisos dentro de la aplicación. Al hacerlo, el usuario:</p>
+      <ul>
+        <li>Declara ser el autor o tener los derechos necesarios sobre dicho contenido</li>
+        <li>Otorga a INFOZONAL una licencia no exclusiva para mostrar dicho contenido en la plataforma</li>
+        <li>Acepta la plena responsabilidad sobre el contenido publicado</li>
+      </ul>
+      <p>El titular se reserva el derecho de eliminar cualquier contenido que considere inapropiado, sin necesidad de previo aviso.</p>
+    </div>
+
+    <!-- 6 -->
+    <div class="section">
+      <div class="section-number">Artículo 06</div>
+      <h2>Propiedad intelectual</h2>
+      <p>Todos los elementos de INFOZONAL — incluyendo nombre, logotipo, diseño, código fuente, estructura y contenidos propios — son propiedad de <strong>Jaime Alberto Martínez Reyes</strong> y están protegidos por las leyes de propiedad intelectual aplicables.</p>
+      <p>Queda prohibida la reproducción, distribución, modificación o uso comercial de cualquier elemento de la aplicación sin autorización expresa y por escrito del titular.</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="section">
+      <div class="section-number">Artículo 07</div>
+      <h2>Limitación de responsabilidad</h2>
+      <p>INFOZONAL actúa como plataforma de directorio e información. En consecuencia:</p>
+      <ul>
+        <li>No garantizamos la exactitud, completitud o vigencia de la información publicada por negocios o usuarios</li>
+        <li>No somos responsables de las transacciones o acuerdos realizados entre usuarios y negocios</li>
+        <li>No garantizamos la disponibilidad continua e ininterrumpida del servicio</li>
+        <li>No nos hacemos responsables de daños derivados del uso o imposibilidad de uso de la aplicación</li>
+      </ul>
+    </div>
+
+    <!-- 8 -->
+    <div class="section">
+      <div class="section-number">Artículo 08</div>
+      <h2>Modificaciones del servicio y los términos</h2>
+      <p>El titular se reserva el derecho de modificar, suspender o descontinuar el servicio en cualquier momento, con o sin previo aviso.</p>
+      <p>Asimismo, estos Términos y Condiciones pueden ser actualizados periódicamente. La versión vigente estará siempre disponible en <a href="https://infozonal.com/terminos">infozonal.com/terminos</a>. El uso continuado de la aplicación tras la publicación de cambios implica la aceptación de los nuevos términos.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="section">
+      <div class="section-number">Artículo 09</div>
+      <h2>Privacidad y protección de datos</h2>
+      <p>El tratamiento de datos personales de los usuarios se rige por nuestra <a href="/privacidad">Política de Privacidad</a>, la cual forma parte integral de estos Términos y Condiciones.</p>
+      <p>Para solicitudes relacionadas con sus datos personales, puede escribir a <a href="mailto:privacidad@infozonal.com">privacidad@infozonal.com</a>.</p>
+    </div>
+
+    <!-- 10 -->
+    <div class="section">
+      <div class="section-number">Artículo 10</div>
+      <h2>Ley aplicable y jurisdicción</h2>
+      <p>Estos Términos y Condiciones se rigen por las leyes de la <strong>República de Colombia</strong>. Para cualquier controversia derivada del uso de INFOZONAL, las partes se someten a la jurisdicción de los tribunales competentes de Colombia.</p>
+    </div>
+
+    <!-- 11 -->
+    <div class="section">
+      <div class="section-number">Artículo 11</div>
+      <h2>Contacto</h2>
+      <p>Para cualquier consulta, reclamo o solicitud relacionada con estos Términos y Condiciones, puede comunicarse con nosotros a través de:</p>
+      <div class="info-card">
+        <p>📧 <a href="mailto:privacidad@infozonal.com">privacidad@infozonal.com</a><br>
+        🌐 <a href="https://infozonal.com">www.infozonal.com</a></p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/privacidad">Política de Privacidad</a>
+      <a href="/terminos">Términos y Condiciones</a>
+      <a href="/eliminar-cuenta">Eliminación de Cuenta</a>
+    </div>
+    <p>© 2026 INFOZONAL · Jaime Alberto Martínez Reyes · Todos los derechos reservados</p>
+  </footer>
+
+</body>
+</html>

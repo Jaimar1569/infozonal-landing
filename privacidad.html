@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — INFOZONAL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:        #080C2A;
+      --surface:   #0D1235;
+      --surface2:  #111847;
+      --cyan:      #00C9B1;
+      --cyan-dim:  rgba(0,201,177,0.12);
+      --cyan-line: rgba(0,201,177,0.25);
+      --white:     #F0F4FF;
+      --muted:     rgba(240,244,255,0.45);
+      --muted2:    rgba(240,244,255,0.2);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── FONDO ANIMADO ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 10% 20%, rgba(0,201,177,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 90% 80%, rgba(0,100,255,0.06) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 48px 24px 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--cyan-line);
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--cyan-dim);
+      border: 1px solid var(--cyan-line);
+      border-radius: 100px;
+      padding: 6px 18px;
+      margin-bottom: 24px;
+    }
+
+    .logo-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    .logo-text {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    h1 span { color: var(--cyan); }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* ── LAYOUT ── */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── ÍNDICE ── */
+    .index-card {
+      background: var(--surface);
+      border: 1px solid var(--cyan-line);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+
+    .index-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+
+    .index-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+
+    @media (max-width: 480px) {
+      .index-list { grid-template-columns: 1fr; }
+    }
+
+    .index-list a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+
+    .index-list a::before {
+      content: '';
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--cyan);
+      flex-shrink: 0;
+      opacity: 0.5;
+    }
+
+    .index-list a:hover { color: var(--cyan); }
+
+    /* ── SECCIONES ── */
+    section {
+      margin-bottom: 48px;
+      scroll-margin-top: 24px;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--white);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 20px;
+      background: var(--cyan);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    p {
+      color: rgba(240,244,255,0.75);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      list-style: none;
+      margin: 12px 0 16px;
+    }
+
+    ul li {
+      color: rgba(240,244,255,0.75);
+      font-size: 0.95rem;
+      padding: 5px 0 5px 20px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight {
+      background: var(--cyan-dim);
+      border-left: 3px solid var(--cyan);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+    }
+
+    .highlight p { margin: 0; color: var(--white); }
+
+    /* ── TABLA ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+
+    .data-table th {
+      background: var(--surface2);
+      color: var(--cyan);
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--cyan-line);
+    }
+
+    .data-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--muted2);
+      color: rgba(240,244,255,0.75);
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── CONTACT BOX ── */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--cyan-line);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 56px;
+    }
+
+    .contact-box h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-box p { margin-bottom: 0; }
+
+    .contact-box a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid var(--muted2);
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    footer a {
+      color: var(--cyan);
+      text-decoration: none;
+    }
+
+    /* ── DIVIDER ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--muted2);
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo-badge" style="text-decoration:none;">
+    <span class="logo-dot"></span>
+    <span class="logo-text">INFOZONAL</span>
+  </a>
+  <h1>Política de <span>Privacidad</span></h1>
+  <p class="subtitle">Última actualización: 13 de mayo de 2026 &nbsp;·&nbsp; Vigente desde la primera publicación</p>
+</header>
+
+<main>
+
+  <!-- ÍNDICE -->
+  <div class="index-card">
+    <p class="index-title">Contenido</p>
+    <ul class="index-list">
+      <li><a href="#responsable">1. Responsable del tratamiento</a></li>
+      <li><a href="#datos">2. Datos que recopilamos</a></li>
+      <li><a href="#finalidad">3. Finalidad del tratamiento</a></li>
+      <li><a href="#base-legal">4. Base legal</a></li>
+      <li><a href="#compartir">5. Con quién compartimos datos</a></li>
+      <li><a href="#retencion">6. Retención de datos</a></li>
+      <li><a href="#derechos">7. Tus derechos</a></li>
+      <li><a href="#menores">8. Menores de edad</a></li>
+      <li><a href="#seguridad">9. Seguridad</a></li>
+      <li><a href="#cambios">10. Cambios a esta política</a></li>
+      <li><a href="#contacto">11. Contacto</a></li>
+    </ul>
+  </div>
+
+  <div class="highlight">
+    <p>INFOZONAL es una aplicación de directorio local comunitario que conecta a habitantes y visitantes con comercios, servicios, avisos comunitarios y promociones de su zona. Tu privacidad es importante para nosotros. Esta política explica, de forma clara, qué datos tratamos y por qué.</p>
+  </div>
+
+  <!-- 1 -->
+  <section id="responsable">
+    <h2>1. Responsable del tratamiento</h2>
+    <p>El responsable del tratamiento de tus datos personales es el operador de INFOZONAL. Para contactarnos, usa el correo indicado al final de este documento.</p>
+    <p>La aplicación opera bajo la legislación colombiana, en particular la <strong>Ley 1581 de 2012</strong> (Protección de Datos Personales) y sus decretos reglamentarios.</p>
+  </section>
+
+  <!-- 2 -->
+  <section id="datos">
+    <h2>2. Datos que recopilamos</h2>
+    <p>Dependiendo de cómo uses la app, recopilamos los siguientes datos:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Dato</th>
+          <th>Cuándo se recopila</th>
+          <th>¿Es obligatorio?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Nombre</td>
+          <td>Al registrarte</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Correo electrónico</td>
+          <td>Al registrarte o iniciar sesión</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Contraseña (cifrada)</td>
+          <td>Al registrarte</td>
+          <td>Sí</td>
+        </tr>
+        <tr>
+          <td>Ubicación aproximada (GPS)</td>
+          <td>Al usar "Cerca de ti" en el inicio</td>
+          <td>No (puedes denegar el permiso)</td>
+        </tr>
+        <tr>
+          <td>Token de notificación push</td>
+          <td>Al iniciar sesión en un dispositivo físico</td>
+          <td>No (puedes denegar el permiso)</td>
+        </tr>
+        <tr>
+          <td>Reseñas y calificaciones</td>
+          <td>Cuando escribís una reseña de un comercio</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td>Identificador de dispositivo</td>
+          <td>Para registro de notificaciones push</td>
+          <td>No</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>No recopilamos datos financieros, documentos de identidad, ni información sensible según la definición del artículo 5 de la Ley 1581 de 2012.</p>
+  </section>
+
+  <!-- 3 -->
+  <section id="finalidad">
+    <h2>3. Finalidad del tratamiento</h2>
+    <p>Usamos tus datos exclusivamente para:</p>
+    <ul>
+      <li>Crear y gestionar tu cuenta de usuario.</li>
+      <li>Autenticarte de forma segura en la aplicación.</li>
+      <li>Mostrarte comercios y servicios cercanos a tu ubicación (solo si otorgás el permiso).</li>
+      <li>Enviarte notificaciones push sobre avisos comunitarios y promociones (solo si otorgás el permiso).</li>
+      <li>Asociar tus reseñas y calificaciones a tu cuenta.</li>
+      <li>Recuperar tu contraseña cuando lo solicites.</li>
+      <li>Mejorar el funcionamiento y la experiencia general de la app.</li>
+    </ul>
+    <p>No usamos tus datos para publicidad de terceros, ni los vendemos o cedemos con fines comerciales.</p>
+  </section>
+
+  <!-- 4 -->
+  <section id="base-legal">
+    <h2>4. Base legal del tratamiento</h2>
+    <p>El tratamiento de tus datos se basa en:</p>
+    <ul>
+      <li><strong>Tu consentimiento</strong> — otorgado al registrarte y al aceptar esta política.</li>
+      <li><strong>Ejecución de la relación contractual</strong> — necesaria para prestarte el servicio de la app.</li>
+      <li><strong>Interés legítimo</strong> — para mejorar la seguridad y el funcionamiento de la aplicación.</li>
+    </ul>
+    <p>Podés revocar tu consentimiento en cualquier momento solicitando la eliminación de tu cuenta.</p>
+  </section>
+
+  <!-- 5 -->
+  <section id="compartir">
+    <h2>5. Con quién compartimos tus datos</h2>
+    <p>Tus datos pueden ser procesados por los siguientes proveedores de servicio, en calidad de encargados del tratamiento:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Proveedor</th>
+          <th>Finalidad</th>
+          <th>País</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Supabase Inc.</td>
+          <td>Base de datos, autenticación y almacenamiento de archivos</td>
+          <td>Estados Unidos</td>
+        </tr>
+        <tr>
+          <td>Expo (Expo Go / EAS)</td>
+          <td>Envío de notificaciones push</td>
+          <td>Estados Unidos</td>
+        </tr>
+        <tr>
+          <td>OpenWeatherMap</td>
+          <td>Información del clima local (dato anonimizado por coordenadas)</td>
+          <td>Reino Unido</td>
+        </tr>
+        <tr>
+          <td>OpenStreetMap / Leaflet</td>
+          <td>Visualización de mapas (no envía datos personales)</td>
+          <td>Internacional</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>No compartimos tus datos con ningún otro tercero. No vendemos datos personales.</p>
+  </section>
+
+  <!-- 6 -->
+  <section id="retencion">
+    <h2>6. Retención de datos</h2>
+    <p>Conservamos tus datos mientras tu cuenta esté activa. Si solicitás la eliminación de tu cuenta:</p>
+    <ul>
+      <li>Tus datos de autenticación (correo, contraseña) se eliminan de forma permanente.</li>
+      <li>Tus reseñas publicadas quedan anonimizadas o son eliminadas según tu solicitud.</li>
+      <li>Tu token de notificación push se elimina de nuestra base de datos.</li>
+    </ul>
+    <p>Podés solicitar la eliminación desde la sección de Perfil de la app o enviando un correo a nuestra dirección de contacto.</p>
+  </section>
+
+  <!-- 7 -->
+  <section id="derechos">
+    <h2>7. Tus derechos</h2>
+    <p>De acuerdo con la Ley 1581 de 2012, tenés derecho a:</p>
+    <ul>
+      <li><strong>Conocer</strong> los datos que tenemos sobre vos.</li>
+      <li><strong>Actualizar</strong> tus datos si están desactualizados o son inexactos.</li>
+      <li><strong>Rectificar</strong> información incorrecta.</li>
+      <li><strong>Suprimir</strong> tus datos cuando no sean necesarios o hayas revocado el consentimiento.</li>
+      <li><strong>Revocar</strong> el consentimiento otorgado en cualquier momento.</li>
+      <li><strong>Presentar quejas</strong> ante la Superintendencia de Industria y Comercio (SIC).</li>
+    </ul>
+    <p>Para ejercer cualquiera de estos derechos, escribinos al correo de contacto. Respondemos en un plazo máximo de 15 días hábiles.</p>
+  </section>
+
+  <!-- 8 -->
+  <section id="menores">
+    <h2>8. Menores de edad</h2>
+    <div class="highlight">
+      <p>INFOZONAL no está dirigida a menores de 14 años. No recopilamos intencionalmente datos de menores. Si sos padre o tutor y creés que tu hijo proporcionó datos sin autorización, contáctanos para eliminarlos de inmediato.</p>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section id="seguridad">
+    <h2>9. Seguridad</h2>
+    <p>Aplicamos medidas técnicas y organizativas para proteger tus datos:</p>
+    <ul>
+      <li>Contraseñas almacenadas con hash seguro (gestionado por Supabase Auth).</li>
+      <li>Comunicaciones cifradas mediante HTTPS/TLS.</li>
+      <li>Acceso a la base de datos restringido mediante políticas de Row Level Security (RLS).</li>
+      <li>Tokens de sesión con expiración automática.</li>
+    </ul>
+    <p>Ningún sistema es 100% seguro. En caso de una brecha de seguridad que afecte tus datos, te notificaremos en el menor tiempo posible.</p>
+  </section>
+
+  <!-- 10 -->
+  <section id="cambios">
+    <h2>10. Cambios a esta política</h2>
+    <p>Podemos actualizar esta política periódicamente. Cuando lo hagamos:</p>
+    <ul>
+      <li>Actualizaremos la fecha de "última actualización" al inicio de este documento.</li>
+      <li>Si los cambios son significativos, te notificaremos a través de la app.</li>
+    </ul>
+    <p>Te recomendamos revisar esta política periódicamente. El uso continuado de la app después de los cambios implica aceptación de la nueva versión.</p>
+  </section>
+
+  <!-- 11 -->
+  <section id="contacto">
+    <h2>11. Contacto</h2>
+    <p>Para cualquier consulta, solicitud o queja relacionada con el tratamiento de tus datos personales, podés contactarnos en:</p>
+  </section>
+
+  <!-- CONTACT BOX -->
+  <div class="contact-box">
+    <h3>¿Tenés preguntas sobre tu privacidad?</h3>
+    <p>Escribinos a <a href="mailto:privacidad@infozonal.com">privacidad@infozonal.com</a></p>
+    <p style="margin-top:8px; font-size:0.85rem;">Respondemos en un máximo de 15 días hábiles.</p>
+  </div>
+
+  <hr />
+
+  <p style="text-align:center; font-size:0.85rem; color:var(--muted);">
+    Esta política aplica únicamente a la aplicación móvil INFOZONAL y los servicios directamente relacionados.
+  </p>
+
+</main>
+
+<footer>
+  <p>© 2026 INFOZONAL &nbsp;·&nbsp; <a href="/terminos">Términos y Condiciones</a> &nbsp;·&nbsp; <a href="/eliminar-cuenta">Eliminación de cuenta</a></p>
+</footer>
+
+</body>
+</html>
